@@ -12,8 +12,9 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { ColorModeContext } from '../../context';
-
-
+import Sidebar from '../Sidebar';
+import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList';
+import StarIcon from '@mui/icons-material/Star';
 export const useStyles = makeStyles(theme => ({
   logo: {
     width: '150px',
@@ -39,6 +40,7 @@ export const useStyles = makeStyles(theme => ({
     fontSize: '0.8rem',
     fontWeight: "bold",
     lineHeight: '1.8rem',
+    marginRight: '2rem',
     textTransform: 'capitalize',
     color: theme.palette.primary,
     border: `1px solid ${theme.palette.color.buttonBorder}`,
@@ -52,6 +54,7 @@ export const useStyles = makeStyles(theme => ({
 
 const NavbarComponent: React.FC = () => {
 
+  const [isOpenDrawer, setIsOpenDrawer] = React.useState(false);
   const theme = useTheme();
   const classes = useStyles()
   const colorMode = React.useContext(ColorModeContext);
@@ -60,7 +63,7 @@ const NavbarComponent: React.FC = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
-        position="static"
+        position="sticky"
         color="transparent"
         elevation={0}
         sx={{
@@ -97,6 +100,7 @@ const NavbarComponent: React.FC = () => {
             <Tooltip title="Keranjang">
               <Button
                 variant="outlined"
+                onClick={() => setIsOpenDrawer(!isOpenDrawer)}
                 size="small"
                 className={classes.cartButton}
                 disableElevation={true}
@@ -105,6 +109,23 @@ const NavbarComponent: React.FC = () => {
                 }
               >
                 0
+              </Button>
+            </Tooltip>
+          </div>
+
+          <div className="self-center hidden md:block">
+            <Tooltip title="Lihat kategori">
+              <Button
+                variant="outlined"
+                onClick={() => setIsOpenDrawer(!isOpenDrawer)}
+                size="small"
+                className={classes.cartButton}
+                disableElevation={true}
+                startIcon={
+                  <FeaturedPlayListIcon color={"primary"} />
+                }
+              >
+               Kategori
               </Button>
             </Tooltip>
           </div>
@@ -122,6 +143,11 @@ const NavbarComponent: React.FC = () => {
 
         </div>
       </AppBar>
+
+      <Sidebar 
+        isOpen={isOpenDrawer}
+        setIsOpen={setIsOpenDrawer}
+      />
     </Box>
   )
 }
