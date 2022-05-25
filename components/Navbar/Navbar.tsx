@@ -25,7 +25,7 @@ export const useStyles = makeStyles(theme => ({
     minWidth: '100px',
     fontSize: '0.8rem',
     lineHeight: '1.8rem',
-    fontWeight: 400,
+    fontWeight: "bold",
     textTransform: 'capitalize',
     color: 'rgb(145,151,157)',
     border: `1px solid ${theme.palette.color.buttonBorder}`,
@@ -37,6 +37,7 @@ export const useStyles = makeStyles(theme => ({
     }
   },
   cartButton: { 
+    background: theme.palette.color.buttonBackground,
     fontSize: '0.8rem',
     fontWeight: "bold",
     lineHeight: '1.8rem',
@@ -63,12 +64,13 @@ const NavbarComponent: React.FC = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
-        position="sticky"
+        position="fixed"
         color="transparent"
         elevation={0}
         sx={{
-          bgcolor: 'background.default',
-          borderBottom : `0.8px solid ${theme.palette.border}`
+          // bgcolor: 'background.default',
+          borderBottom : `0.8px solid ${theme.palette.border}`,
+          backdropFilter:"blur(30px)"
         }}
       >
         <div className="flex justify-center items-scretch shadow-sm py-2">

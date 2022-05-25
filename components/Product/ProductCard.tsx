@@ -12,11 +12,13 @@ import ShareIcon from '@mui/icons-material/Share';
 import { useTheme } from "@mui/styles";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import Chip from '@mui/material/Chip';
+
+
 type ProductCardProps = {
   name: string
   img_src: string
 }
-
 
 const ProductCard: React.FC<ProductCardProps> = ({
   name,
@@ -25,16 +27,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   const theme = useTheme()
   return (
-    <Card sx={{ maxWidth: 345, bgcolor: 'background.default' }}>
+    <Card sx={{ 
+        maxWidth: 345, 
+        bgcolor: 'background.default', 
+        borderRadius : '10px', 
+      }}>
       <CardHeader
         title={
-          <Typography variant="h6" color={theme.palette.primary.main} sx={{
-            marginY: 1,
-            fontSize: 16,
-            fontWeight: "bold",
-          }}>
-            {name}
-          </Typography>
+          <>
+            <Chip label="Livia series" color="primary" sx={{
+              fontSize : '12px',
+              paddingY : 0
+            }} />
+          </>
+
         }
       // subheader="September 14, 2016"
       />
@@ -45,20 +51,29 @@ const ProductCard: React.FC<ProductCardProps> = ({
         alt="Paella dish"
       />
       <CardContent>
-      <Typography variant="h6" color={theme.palette.primary.main}  sx={{
-          fontSize: 16,
-          fontWeight: "bold",
-        }}>
-          Rp. 100.000
-        </Typography>
-        <Typography variant="h6" color={theme.palette.primary.main}  sx={{
-          fontSize: 14,
-          fontWeight: "light",
-        }}>
-          Terjual 16 | 4.5
-        </Typography>
+      <Typography variant="h6" color={theme.palette.primary.main} sx={{
+              marginY: 0.5,
+              fontSize: 16,
+              fontWeight : 500
+            }}>
+              {name}
+            </Typography>
+          <Typography variant="h6" color={theme.palette.primary.main}  sx={{
+            fontSize: 16,
+            marginY: 0.5,
+            fontWeight: "bold",
+          }}>
+              Rp. 100.000
+          </Typography>
+          <Typography variant="h6" color={theme.palette.primary.main}  sx={{
+            fontSize: 14,
+            fontWeight: "light",
+          }}>
+            Terjual 16 | 4.5
+          </Typography>
+        {/* </div> */}
       </CardContent>
-      <CardActions disableSpacing sx={{ marginY: 1, marginX: 1 }} className={"space-x-2"}>
+      <CardActions disableSpacing sx={{marginX: 1 }} className={"space-x-2"}>
         <Button
           variant="outlined"
           size="small"

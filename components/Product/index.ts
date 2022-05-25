@@ -1,1 +1,2 @@
-export { default } from './ProductCard'
+export * from './ProductCard'
+export * from './ProductCardLoad'

@@ -9,7 +9,7 @@ const SectionTitle : React.FC = () => {
       <Typography 
         sx={{
           fontSize : 18,
-          letterSpacing : 0.7,
+          letterSpacing : -0.1,
           fontWeight : "bold",
           color : theme.palette.primary.main
         }}

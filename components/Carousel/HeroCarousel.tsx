@@ -17,12 +17,11 @@ const HeroCarousel = () => {
     <div className="flex justify-center">
       <Carousel
         className="mx-4 md:w-1/2 w-full self-center"
-        height={300}
+        height={260}
         sx={{
           marginY: 4,
           borderRadius: '30px'
         }}
-
         navButtonsAlwaysInvisible
         indicators={false}
       >
@@ -36,11 +35,11 @@ const HeroCarousel = () => {
 
 const Item = (props: any) => {
   return (
-    <Paper sx={{ height: '300px' }} >
+    <Paper sx={{ height: '260px' }} >
       <img
         src={props.item.src}
         alt=""
-        className="h-full object-fill"
+        className="h-full object-fit"
       />
     </Paper>
   )

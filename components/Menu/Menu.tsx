@@ -10,7 +10,7 @@ type MenuButtonProps = {
   onClick: React.MouseEventHandler<HTMLButtonElement>
 }
 
-const MenuButton: React.FC<MenuButtonProps> = ({
+export const MenuButton: React.FC<MenuButtonProps> = ({
   name,
   href,
   isActive = true,

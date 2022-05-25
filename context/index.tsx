@@ -53,7 +53,7 @@ export const ColorContextProvider : React.FC<ColorContextProviderProps> = ({chil
               },
               border : "rgb(224, 227, 231)",
               color : {
-                buttonBackground : "",
+                buttonBackground : "#fff",
                 buttonBackgroundHover  : "",
                 buttonBackgroundActive : "",
                 buttonBorder : "rgb(224, 227, 231)",

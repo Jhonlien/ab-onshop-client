@@ -19,6 +19,48 @@ type SidebarProps = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
+type MenuButtonProps = {
+  name: string
+  href?: string
+  isActive : boolean
+  onClick: React.MouseEventHandler<HTMLButtonElement>
+}
+
+export const MenuButton: React.FC<MenuButtonProps> = ({
+  name,
+  href,
+  isActive = true,
+  onClick
+}) => {
+  const theme = useTheme()
+  return (
+    <Button
+      variant="outlined"
+      size="small"
+      disableElevation={true}
+      onClick={ onClick }
+      sx={{
+        border: `2px solid ${isActive? theme.palette.color.buttonBorderActive : 'transparent'}`,
+        width : '100%',
+        textAlign: 'left',
+        borderRadius : '10px',
+        fontSize : '0.9em',
+        background : isActive? 'rgba(78, 13, 55, 0.04)' : 'transparent',
+        fontWeight : "bolder",
+        paddingX: 4,
+        paddingY: 0.6,
+        textTransform : 'capitalize',
+        ":hover" : {
+          border: `2px solid ${isActive? theme.palette.color.buttonBorderActive : theme.palette.color.buttonBorder}`,  
+        }
+      }}
+    >
+      {name}
+    </Button>
+  )
+}
+
+
 const Sidebar: React.FC<SidebarProps> = ({
   isOpen,
   setIsOpen
@@ -41,22 +83,19 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   const list = () => (
     <Box
-      sx={{width : 300, height: '100%', bgcolor: 'background.default'}}
+      sx={{ width: 350, height: '100%', bgcolor: 'background.default' }}
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
     >
-      <Divider />
       <List>
         {['Livia Series', 'Couple Series', 'Prayer Series', 'Khimar'].map((text, index) => (
-          <ListItem key={text} sx={{
-            fontSize : '10em',
-          }}>
-            <ListItemButton sx={{
-              borderRadius : '10px',
-            }}>
-              <ListItemText primary={text} />
-            </ListItemButton>
+          <ListItem key={text}>
+            <MenuButton
+              name={text}
+              isActive={false}
+              onClick={() => { }}
+            />
           </ListItem>
         ))}
       </List>
