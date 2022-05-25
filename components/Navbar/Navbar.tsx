@@ -28,12 +28,12 @@ export const useStyles = makeStyles(theme => ({
     fontWeight: "bold",
     textTransform: 'capitalize',
     color: 'rgb(145,151,157)',
-    border: `1px solid ${theme.palette.color.buttonBorder}`,
+    border: `2px solid ${theme.palette.color.buttonBorder}`,
     borderRadius: '10px',
     marginRight: '2rem',
     '&:hover': {
       backgroundColor: theme.palette.color.buttonBackgroundHover,
-      border: `1px solid ${theme.palette.color.buttonBorder}`,
+      border: `2px solid ${theme.palette.color.buttonBorder}`,
     }
   },
   cartButton: { 
@@ -44,11 +44,11 @@ export const useStyles = makeStyles(theme => ({
     marginRight: '2rem',
     textTransform: 'capitalize',
     color: theme.palette.primary,
-    border: `1px solid ${theme.palette.color.buttonBorder}`,
+    border: `2px solid ${theme.palette.color.buttonBorder}`,
     borderRadius: '10px',
     '&:hover': {
       backgroundColor: theme.palette.color.buttonBackgroundHover,
-      border: `1px solid ${theme.palette.color.buttonBorder}`,
+      border: `2px solid ${theme.palette.color.buttonBorder}`,
     }
   }
 }))

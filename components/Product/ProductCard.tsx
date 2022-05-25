@@ -28,7 +28,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const theme = useTheme()
   return (
     <Card sx={{ 
-        maxWidth: 345, 
+        // maxWidth: 345, 
         bgcolor: 'background.default', 
         borderRadius : '10px', 
       }}>

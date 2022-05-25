@@ -3,7 +3,7 @@ import { Card, CardMedia, Box, Typography } from "@mui/material";
 
 const CategoryCard: React.FC = () => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card>
       <Box sx={{ position: 'relative' }}>
         <CardMedia
           component="img"

@@ -2,7 +2,13 @@ import React from "react";
 import { makeStyles, useTheme } from '@mui/styles'
 import { Typography } from "@mui/material";
 
-const SectionTitle : React.FC = () => {
+type SectionTitleType = {
+  title : string
+}
+
+const SectionTitle : React.FC<SectionTitleType> = ({
+ title 
+} : SectionTitleType ) => {
   const theme = useTheme()
   return(
     <div className="text-left my-4">
@@ -14,7 +20,7 @@ const SectionTitle : React.FC = () => {
           color : theme.palette.primary.main
         }}
       >
-        Produk Terbaru
+        {title}
       </Typography>
     </div>
   )

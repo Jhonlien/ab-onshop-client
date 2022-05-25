@@ -22,7 +22,7 @@ type SidebarProps = {
 type MenuButtonProps = {
   name: string
   href?: string
-  isActive : boolean
+  isActive: boolean
   onClick: React.MouseEventHandler<HTMLButtonElement>
 }
 
@@ -38,20 +38,20 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
       variant="outlined"
       size="small"
       disableElevation={true}
-      onClick={ onClick }
+      onClick={onClick}
       sx={{
-        border: `2px solid ${isActive? theme.palette.color.buttonBorderActive : 'transparent'}`,
-        width : '100%',
+        border: `2px solid ${isActive ? theme.palette.color.buttonBorderActive : 'transparent'}`,
+        width: '100%',
         textAlign: 'left',
-        borderRadius : '10px',
-        fontSize : '0.9em',
-        background : isActive? 'rgba(78, 13, 55, 0.04)' : 'transparent',
-        fontWeight : "bolder",
+        borderRadius: '10px',
+        fontSize: '0.9em',
+        background: isActive ? 'rgba(78, 13, 55, 0.04)' : 'transparent',
+        fontWeight: "bolder",
         paddingX: 4,
         paddingY: 0.6,
-        textTransform : 'capitalize',
-        ":hover" : {
-          border: `2px solid ${isActive? theme.palette.color.buttonBorderActive : theme.palette.color.buttonBorder}`,  
+        textTransform: 'capitalize',
+        ":hover": {
+          border: `2px solid ${isActive ? theme.palette.color.buttonBorderActive : theme.palette.color.buttonBorder}`,
         }
       }}
     >
@@ -81,6 +81,31 @@ const Sidebar: React.FC<SidebarProps> = ({
         setIsOpen(!open);
       };
 
+  const LIST = [
+    {
+      name: 'Livia Series',
+      isActive: true
+    },
+    {
+      name: 'Couple Series',
+      isActive: false
+    },
+    {
+      name: 'Gamis Series',
+      isActive: false
+    },
+
+    {
+      name: 'Kids Series',
+      isActive: false
+    },
+
+    {
+      name: 'Family Series',
+      isActive: false
+    },
+
+  ]
   const list = () => (
     <Box
       sx={{ width: 350, height: '100%', bgcolor: 'background.default' }}
@@ -89,11 +114,11 @@ const Sidebar: React.FC<SidebarProps> = ({
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        {['Livia Series', 'Couple Series', 'Prayer Series', 'Khimar'].map((text, index) => (
+        {LIST.map((text, index) => (
           <ListItem key={text}>
             <MenuButton
-              name={text}
-              isActive={false}
+              name={text.name}
+              isActive={text.isActive}
               onClick={() => { }}
             />
           </ListItem>
