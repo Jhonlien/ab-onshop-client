@@ -73,7 +73,10 @@ const NavbarComponent: React.FC = () => {
           backdropFilter:"blur(30px)"
         }}
       >
-        <div className="flex justify-center items-scretch shadow-sm py-2">
+        <div className="flex justify-center shadow-sm py-2">
+
+          <div className='md:flex md:flex-row md:w-1/2 md:justify-between'>
+
           {theme?.palette?.mode === 'dark' && (
             <img src="/assets/brand/logo_abaya-white1.png" className={classes.logo} />
           )}
@@ -144,6 +147,8 @@ const NavbarComponent: React.FC = () => {
           </div>
 
         </div>
+        </div>
+
       </AppBar>
 
       <Sidebar 

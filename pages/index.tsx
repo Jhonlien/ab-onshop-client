@@ -13,13 +13,14 @@ import HeroCarouselLoad from '../components/Carousel/HeroCarouselLoad'
 import CategoryCard from '../components/Category/CategoryCard'
 import { Button } from '@mui/material'
 import { useTheme } from "@mui/styles";
+import Layout from '../components/Layout'
 
 const Home: NextPage = () => {
 
   const theme = useTheme()
 
   return (
-    <div className='md:px-12 mt-24'>
+    <Layout title='Home'>
       <Menu />
       <HeroCarousel />
       {/* <HeroCarouselLoad /> */}
@@ -120,7 +121,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-    </div>
+    </Layout>
   )
 }
 

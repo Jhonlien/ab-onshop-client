@@ -12,7 +12,7 @@ type ColorContextProviderProps = {
 
 export const ColorContextProvider : React.FC<ColorContextProviderProps> = ({children} : ColorContextProviderProps) => {
 
-  const [mode, setMode] = React.useState<PaletteMode>("dark")
+  const [mode, setMode] = React.useState<PaletteMode>("light")
 
   const theme = React.useMemo(
     () =>
