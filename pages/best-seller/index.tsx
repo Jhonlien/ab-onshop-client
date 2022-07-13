@@ -6,7 +6,6 @@ import Hero from '../../components/Carousel/Hero'
 const BestSeller : NextPage = () => {
   return (
     <Layout title='Best Seller'>
-      <Menu />
       <Hero
         title='Best Seller'
         desc='Lihat semua produk terfavorit dari All Busyra '

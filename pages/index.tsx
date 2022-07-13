@@ -21,7 +21,6 @@ const Home: NextPage = () => {
 
   return (
     <Layout title='Home'>
-      <Menu />
       <HeroCarousel />
       {/* <HeroCarouselLoad /> */}
 

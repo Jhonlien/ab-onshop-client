@@ -113,7 +113,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             }
           }}
         >
-          Kerangjang
+          Keranjang
         </Button>
 
         <Button

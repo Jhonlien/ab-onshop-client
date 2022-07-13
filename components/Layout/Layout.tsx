@@ -32,7 +32,7 @@ const Layout: React.FC<LayoutProps> = (
         variants={variants}
         transition={{ type: 'linear', restDelta: 0.5 }}
       >
-        <div className='md:px-12 mt-24'>
+        <div className='md:px-12'>
           {children}
         </div>
       </motion.main>

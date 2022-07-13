@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar'
 import { ColorContextProvider, ColorModeContext } from '../context';
 import { CssBaseline, } from "@mui/material";
 import { AnimatePresence } from 'framer-motion'
+import Menu from '../components/Menu';
 
 
 export const useStyles = makeStyles(theme => ({
@@ -21,6 +22,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ColorContextProvider>
       <Navbar />
+      <div className='md:px-12 mt-24'>
+        <Menu/>
+      </div>
       <CssBaseline />
       <AnimatePresence
         exitBeforeEnter

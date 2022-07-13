@@ -16,7 +16,7 @@ const Hero : React.FC<HeroProps> = ({
 }) => {
   return (
     <div className="flex justify-center my-8">
-      <div className="w-1/2">
+      <div className="md:w-1/2 px-4 md:px-0">
         <Card className="h-48 rounded-2xl" elevation={0}>
           <Box sx={{ position: 'relative', borderRadius : 10 }}>
             <CardMedia

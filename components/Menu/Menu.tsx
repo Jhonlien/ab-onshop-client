@@ -49,7 +49,7 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
 const Menu: React.FC = () => {
   const router = useRouter()
   return (
-    <div className="flex overflow-x-auto space-x-2 md:space-x-6 justify-between px-4 md:justify-center">
+    <div className="flex overflow-x-auto space-x-2 justify-between px-4 md:justify-center">
       
       {
         PageRoute.PAGE_ROUTE.map((menu, index) => (         

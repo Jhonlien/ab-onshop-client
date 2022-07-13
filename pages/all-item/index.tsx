@@ -9,7 +9,6 @@ import Hero from '../../components/Carousel/Hero'
 const AllItem : NextPage = () => {
   return (
     <Layout title='All Item'>
-      <Menu />
       <Hero
         title='All Item'
         desc='Lihat semua produk terbaru dari All Busyra'
