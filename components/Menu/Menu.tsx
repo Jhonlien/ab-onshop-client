@@ -28,7 +28,7 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
       disableElevation={true}
       onClick={onClick}
       sx={{
-        border: `2px solid ${isActive ? theme.palette.color.buttonBorderActive : 'transparent'}`,
+        border: `2px solid ${isActive ? theme?.palette?.color.buttonBorderActive : 'transparent'}`,
         borderRadius: '10px',
         fontSize: '0.9em',
         background: isActive ? 'rgba(78, 13, 55, 0.04)' : 'transparent',
@@ -37,7 +37,7 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
         paddingY: 0.6,
         textTransform: 'capitalize',
         ":hover": {
-          border: `2px solid ${isActive ? theme.palette.color.buttonBorderActive : theme.palette.color.buttonBorder}`,
+          border: `2px solid ${isActive ? theme?.palette?.color.buttonBorderActive : theme?.palette?.color.buttonBorder}`,
         }
       }}
     >

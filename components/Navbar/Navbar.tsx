@@ -68,7 +68,7 @@ const NavbarComponent: React.FC = () => {
         elevation={0}
         sx={{
           // bgcolor: 'background.default',
-          borderBottom : `0.8px solid ${theme.palette.border}`,
+          borderBottom : `0.8px solid ${theme?.palette?.border}`,
           backdropFilter:"blur(30px)"
         }}
       >
