@@ -60,7 +60,6 @@ const NavbarComponent: React.FC = () => {
   const classes = useStyles()
   const colorMode = React.useContext(ColorModeContext);
 
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
