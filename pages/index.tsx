@@ -21,17 +21,17 @@ const Home: NextPage = () => {
 
   return (
     <Layout title='Home'>
-      <HeroCarousel />
+      {/* <HeroCarousel /> */}
       {/* <HeroCarouselLoad /> */}
 
-      <div className='flex md:justify-center mx-4 md:mx-0'>
+      <div className='flex mx-4 md:mx-0'>
         <div className='w-1/2'>
           <SectionTitle title='Produk Terbaru' />
         </div>
       </div>
 
-      <div className='flex md:justify-center mx-4 md:mx-0'>
-        <div className='md:w-1/2 w-full'>
+      <div className='flex mx-4 md:mx-0'>
+        <div className="w-full">
           <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4 mb-10">
             <ProductCard name='Haifa Series Gamis Set Syari' img_src='https://s3-ap-southeast-1.amazonaws.com/tokotalklive/images/products/146ADED0-9D6C-45CB-B76B-AE1CACD1A19F_1640402638690.jpeg' />
             <ProductCard name='Haifa Series Gamis Set Syari' img_src='https://s3-ap-southeast-1.amazonaws.com/tokotalklive/images/products/Cover_Web_Aleria_Series_New_Color_2_1652942518680.jpg' />
@@ -39,14 +39,14 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className='flex md:justify-center mb-8 mx-4'>
-        <div className='md:w-1/2 w-full'>
+      <div className='flex mb-8'>
+        <div className='w-full'>
           <Button
             variant="outlined"
             size="small"
             disableElevation={true}
             sx={{
-              border: `2px solid ${theme.palette.color.buttonBorder} `,
+              border: `2px solid rgb(224, 227, 231)`,
               borderRadius: '10px',
               fontSize: '0.8em',
               width : "100%",
@@ -55,7 +55,7 @@ const Home: NextPage = () => {
               paddingY: 0.6,
               textTransform: 'capitalize',
               ":hover": {
-                border: `2px solid ${theme.palette.color.buttonBorderActive} `,
+                border: `2px solid rgb(78, 13, 55) `,
               }
             }}
           >
@@ -65,14 +65,14 @@ const Home: NextPage = () => {
       </div>
 
 
-      <div className='flex md:justify-center mx-4 md:mx-0'>
-        <div className='w-1/2'>
+      <div className='flex md:mx-0'>
+        <div className='w-full'>
           <SectionTitle title='Kategori' />
         </div>
       </div>
 
-      <div className='flex md:justify-center mx-4 md:mx-0'>
-        <div className='md:w-1/2 w-full'>
+      <div className='flex mx-4 md:mx-0'>
+        <div className='w-full'>
           <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4 mb-10">
             <CategoryCard />
             <CategoryCard />
@@ -82,8 +82,8 @@ const Home: NextPage = () => {
 
       
 
-      <div className='flex md:justify-center mx-4 md:mx-0'>
-      <div className='md:w-1/2 w-full'>
+      <div className='flex mx-4 md:mx-0'>
+      <div className='w-full'>
           <div className="grid md:grid-cols-4 sm:grid-cols-1 gap-4 mb-10">
             <CategoryCard />
             <CategoryCard />
@@ -95,14 +95,14 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className='flex md:justify-center mb-8 mx-4'>
-        <div className='md:w-1/2 w-full'>
+      <div className='flex mb-8'>
+        <div className='w-full'>
           <Button
             variant="outlined"
             size="small"
             disableElevation={true}
             sx={{
-              border: `2px solid ${theme.palette.color.buttonBorder} `,
+              border: `2px solid rgb(224, 227, 231)`,
               borderRadius: '10px',
               fontSize: '0.8em',
               width : "100%",
@@ -111,7 +111,7 @@ const Home: NextPage = () => {
               paddingY: 0.6,
               textTransform: 'capitalize',
               ":hover": {
-                border: `2px solid ${theme.palette.color.buttonBorderActive} `,
+                border: `2px solid rgb(78, 13, 55)`,
               }
             }}
           >

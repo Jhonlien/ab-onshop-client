@@ -1,6 +1,8 @@
 import React from "react";
 import { NextSeo } from 'next-seo';
 import { motion } from 'framer-motion'
+import LabelBottomNavigation from "../BottomNavigation";
+import FixedBottomNavigation from "../BottomNavigation";
 
 
 type LayoutProps = {
@@ -32,9 +34,14 @@ const Layout: React.FC<LayoutProps> = (
         variants={variants}
         transition={{ type: 'linear', restDelta: 0.5 }}
       >
-        <div className='md:px-12'>
-          {children}
+      <div className="flex justify-center bg-slate-50">
+        <div className="md:w-1/2 bg-white">
+          <div className='md:px-12 w-full content-center bg-white mt-4'>
+            {children}
+            <FixedBottomNavigation/>
+          </div>
         </div>
+      </div>
       </motion.main>
     </>
   )

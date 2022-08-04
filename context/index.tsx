@@ -17,9 +17,6 @@ export const ColorContextProvider : React.FC<ColorContextProviderProps> = ({chil
   const theme = React.useMemo(
     () =>
       createTheme({
-        // typography : {
-        //   fontFamily : "IBM Plex Sans, sans-serif"
-        // },
         palette: {
           mode,
           ...(mode === 'dark'?
@@ -41,8 +38,6 @@ export const ColorContextProvider : React.FC<ColorContextProviderProps> = ({chil
                 buttonBorder : "rgb(59 130 246 / 0.5)",
                 buttonBorderActive : "rgb(59 130 246 / 0.5)",
               },
-              
-              
             } : {
               primary : {
                 main : "rgb(78, 13, 55)"

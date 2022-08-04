@@ -7,7 +7,6 @@ import { CssBaseline, } from "@mui/material";
 import { AnimatePresence } from 'framer-motion'
 import Menu from '../components/Menu';
 
-
 export const useStyles = makeStyles(theme => ({
   '@global': {
     body: {
@@ -17,14 +16,12 @@ export const useStyles = makeStyles(theme => ({
 }))
 
 function MyApp({ Component, pageProps }: AppProps) {
-
-
   return (
     <ColorContextProvider>
+    <div style={{marginBottom: '4rem'}}>
       <Navbar />
-      <div className='md:px-12 mt-24'>
-        <Menu/>
-      </div>
+    </div>
+      <Menu/>
       <CssBaseline />
       <AnimatePresence
         exitBeforeEnter

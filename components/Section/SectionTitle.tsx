@@ -17,7 +17,7 @@ const SectionTitle : React.FC<SectionTitleType> = ({
           fontSize : 18,
           letterSpacing : -0.1,
           fontWeight : "bold",
-          color : theme.palette.primary.main
+          color : "rgb(78, 13, 55)"
         }}
       >
         {title}

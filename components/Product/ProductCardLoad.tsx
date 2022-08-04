@@ -18,7 +18,7 @@ import Chip from '@mui/material/Chip';
 
 const ProductCardLoad: React.FC = () => {
   const theme = useTheme()
-
+  // theme.palette.primary.main
   return (
     <Card sx={{
       maxWidth: 345,
@@ -33,20 +33,20 @@ const ProductCardLoad: React.FC = () => {
 
       <Skeleton animation="wave" variant="rectangular" height={194} />
       <CardContent>
-        <Typography variant="h6" color={theme.palette.primary.main} sx={{
+        <Typography variant="h6" color={"primary"} sx={{
           marginY: 0.5,
           fontSize: 16,
         }}>
           <Skeleton animation="wave" width={150} height={20} />
         </Typography>
-        <Typography variant="h6" color={theme.palette.primary.main} sx={{
+        <Typography variant="h6" color={"primary"} sx={{
           fontSize: 16,
           marginY: 0.5,
           fontWeight: "bold",
         }}>
           <Skeleton animation="wave" width={100} height={20} />
         </Typography>
-        <Typography variant="h6" color={theme.palette.primary.main} sx={{
+        <Typography variant="h6" color={"primary"} sx={{
           fontSize: 14,
           fontWeight: "light",
         }}>

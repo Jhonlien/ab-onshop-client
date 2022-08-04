@@ -40,7 +40,7 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
       disableElevation={true}
       onClick={onClick}
       sx={{
-        border: `2px solid ${isActive ? theme.palette.color.buttonBorderActive : 'transparent'}`,
+        border: `2px solid ${isActive ? "rgb(78, 13, 55)" : 'transparent'}`,
         width: '100%',
         textAlign: 'left',
         borderRadius: '10px',
@@ -51,7 +51,7 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
         paddingY: 0.6,
         textTransform: 'capitalize',
         ":hover": {
-          border: `2px solid ${isActive ? theme.palette.color.buttonBorderActive : theme.palette.color.buttonBorder}`,
+          border: `2px solid ${isActive ? "rgb(78, 13, 55)" : "rgb(224, 227, 231)"} `,
         }
       }}
     >
@@ -115,7 +115,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     >
       <List>
         {LIST.map((text, index) => (
-          <ListItem key={text}>
+          <ListItem key={text.name}>
             <MenuButton
               name={text.name}
               isActive={text.isActive}

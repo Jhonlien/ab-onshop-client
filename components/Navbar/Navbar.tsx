@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { makeStyles, useTheme } from '@mui/styles'
-
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton';
@@ -14,143 +13,154 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { ColorModeContext } from '../../context';
 import Sidebar from '../Sidebar';
 import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList';
-import StarIcon from '@mui/icons-material/Star';
-export const useStyles = makeStyles(theme => ({
+import { useScrollTrigger } from '@mui/material';
+
+export const useStyles = makeStyles((theme) => ({
   logo: {
-    width: '150px',
+    width: '170px',
     marginRight: '2rem'
   },
   searchButton: {
-    background: theme.palette.color.buttonBackground,
-    minWidth: '100px',
+    background: "#fff",
+    minWidth: '100%',
     fontSize: '0.8rem',
     lineHeight: '1.8rem',
     fontWeight: "bold",
     textTransform: 'capitalize',
+    textAlign: 'left',
     color: 'rgb(145,151,157)',
-    border: `2px solid ${theme.palette.color.buttonBorder}`,
-    borderRadius: '10px',
+    border: `1px solid #ccc`,
+    borderRadius: '8px',
     marginRight: '2rem',
+    backdropFilter: "blur(30px)",
     '&:hover': {
-      backgroundColor: theme.palette.color.buttonBackgroundHover,
-      border: `2px solid ${theme.palette.color.buttonBorder}`,
+      backgroundColor: "",
+      border: `1px solid #ccc`,
     }
   },
-  cartButton: { 
-    background: theme.palette.color.buttonBackground,
+  cartButton: {
+    background: '#fff',
     fontSize: '0.8rem',
     fontWeight: "bold",
     lineHeight: '1.8rem',
     marginRight: '2rem',
     textTransform: 'capitalize',
-    color: theme.palette.primary,
-    border: `2px solid ${theme.palette.color.buttonBorder}`,
-    borderRadius: '10px',
+    color: "rgb(78, 13, 55)",
+    border: `1px solid rgb(224, 227, 231)`,
+    borderRadius: '8px',
+    backdropFilter: "blur(30px)",
     '&:hover': {
-      backgroundColor: theme.palette.color.buttonBackgroundHover,
-      border: `2px solid ${theme.palette.color.buttonBorder}`,
+      backgroundColor: "",
+      border: `1px solid rgb(224, 227, 231)`,
     }
   }
 }))
 
-const NavbarComponent: React.FC = () => {
+
+interface Props {
+  window?: () => Window;
+  children: React.ReactElement;
+}
+
+
+function ElevationScroll(props: Props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: window ? window() : undefined,
+  });
+
+  return React.cloneElement( children, {
+    elevation: trigger ? 4 : 0,
+  });
+}
+
+
+const NavbarComponent = () => {
 
   const [isOpenDrawer, setIsOpenDrawer] = React.useState(false);
-  const theme = useTheme();
+  const theme = useTheme()
   const classes = useStyles()
   const colorMode = React.useContext(ColorModeContext);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
+
       <AppBar
         position="fixed"
         color="transparent"
         elevation={0}
         sx={{
-          // bgcolor: 'background.default',
-          borderBottom : `0.8px solid ${theme?.palette?.border}`,
-          backdropFilter:"blur(30px)"
+          borderBottom: `0.8px solid rgb(224, 227, 231)`,
+          backgroundColor : "#fff",
+          backdropFilter: "blur(30px)"
         }}
       >
-        <div className="flex justify-center shadow-sm py-2">
-
+        <div className="flex justify-center shadow-sm">
           <div className='flex justify-between md:flex md:flex-row md:w-1/2 md:justify-center'>
-
-          {theme?.palette?.mode === 'dark' && (
-            <img src="/assets/brand/logo_abaya-white1.png" className={classes.logo} />
-          )}
-
-          {theme?.palette?.mode === 'light' && (
             <img src="/assets/brand/logo_abaya.png" className={classes.logo} />
-          )}
+            <div className="self-center w-full">
+              <Tooltip title="Cari produk">
+                <Button
+                  variant="outlined"
+                  size="small"
+                  className={classes.searchButton}
+                  disableElevation={true}
+                  startIcon={
+                    <SearchOutlinedIcon color={"primary"} />
+                  }
+                >
+                  Cari...
+                </Button>
+              </Tooltip>
+            </div>
+{/* 
+            <div className="self-center hidden md:block">
+              <Tooltip title="Keranjang">
+                <Button
+                  variant="outlined"
+                  onClick={() => setIsOpenDrawer(!isOpenDrawer)}
+                  size="small"
+                  className={classes.cartButton}
+                  disableElevation={true}
+                  startIcon={
+                    <ShoppingCartOutlinedIcon color={"primary"} />
+                  }
+                >
+                  0
+                </Button>
+              </Tooltip>
+            </div> */}
+{/* 
+            <div className="self-center hidden md:block">
+              <Tooltip title="Lihat kategori">
+                <Button
+                  variant="outlined"
+                  onClick={() => setIsOpenDrawer(!isOpenDrawer)}
+                  size="small"
+                  className={classes.cartButton}
+                  disableElevation={true}
+                  startIcon={
+                    <FeaturedPlayListIcon color={"primary"} />
+                  }
+                >
+                  Kategori
+                </Button>
+              </Tooltip>
+            </div> */}
 
-          <div className="self-center">
-            <Tooltip title="Cari produk">
-              <Button
-                variant="outlined"
-                size="small"
-                className={classes.searchButton}
-                disableElevation={true}
-                startIcon={
-                  <SearchOutlinedIcon color={"primary"} />
-                }
-              >
-                Cari...
-              </Button>
-            </Tooltip>
+            {/* <div className="self-center md:px-4"> */}
+              {/* USER PROFILE */}
+            {/* </div> */}
+
           </div>
-
-          <div className="self-center hidden md:block">
-            <Tooltip title="Keranjang">
-              <Button
-                variant="outlined"
-                onClick={() => setIsOpenDrawer(!isOpenDrawer)}
-                size="small"
-                className={classes.cartButton}
-                disableElevation={true}
-                startIcon={
-                  <ShoppingCartOutlinedIcon color={"primary"} />
-                }
-              >
-                0
-              </Button>
-            </Tooltip>
-          </div>
-
-          <div className="self-center hidden md:block">
-            <Tooltip title="Lihat kategori">
-              <Button
-                variant="outlined"
-                onClick={() => setIsOpenDrawer(!isOpenDrawer)}
-                size="small"
-                className={classes.cartButton}
-                disableElevation={true}
-                startIcon={
-                  <FeaturedPlayListIcon color={"primary"} />
-                }
-              >
-               Kategori
-              </Button>
-            </Tooltip>
-          </div>
-
-          <div className="self-center md:px-4">
-            <Tooltip title={`Ubah ke ${theme?.palette?.mode === 'dark' ? 'Mode Terang' : 'Mode Gelap'}`}>
-              <IconButton aria-label="delete" onClick={colorMode.toggleColorMode}>
-                {theme?.palette?.mode === 'light' && (
-                  <Brightness4Icon color='primary'/>)}
-                {theme?.palette?.mode === 'dark' && (
-                  <Brightness7Icon color='primary' />)}
-              </IconButton>
-            </Tooltip>
-          </div>
-
         </div>
-        </div>
-
       </AppBar>
-
-      <Sidebar 
+      <Sidebar
         isOpen={isOpenDrawer}
         setIsOpen={setIsOpenDrawer}
       />
