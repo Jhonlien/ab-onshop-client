@@ -14,6 +14,7 @@ import { ColorModeContext } from '../../context';
 import Sidebar from '../Sidebar';
 import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList';
 import { useScrollTrigger } from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline';
 
 export const useStyles = makeStyles((theme) => ({
   logo: {
@@ -74,7 +75,7 @@ function ElevationScroll(props: Props) {
     target: window ? window() : undefined,
   });
 
-  return React.cloneElement( children, {
+  return React.cloneElement(children, {
     elevation: trigger ? 4 : 0,
   });
 }
@@ -96,19 +97,36 @@ const NavbarComponent = () => {
         elevation={0}
         sx={{
           borderBottom: `0.8px solid rgb(224, 227, 231)`,
-          backgroundColor : "#fff",
+          backgroundColor: "#fff",
           backdropFilter: "blur(30px)"
         }}
       >
         <div className="flex justify-center shadow-sm">
           <div className='flex justify-between md:flex md:flex-row md:w-1/2 md:justify-center'>
-            <img src="/assets/brand/logo_abaya.png" className={classes.logo} />
+            <img src="/assets/brand/logo_abaya.png" width={"180"} className="mr-8" />
             <div className="self-center w-full">
               <Tooltip title="Cari produk">
                 <Button
                   variant="outlined"
                   size="small"
-                  className={classes.searchButton}
+                  sx={{
+                    background: "#fff",
+                    minWidth: '100%',
+                    fontSize: '0.8rem',
+                    lineHeight: '1.8rem',
+                    fontWeight: "bold",
+                    textTransform: 'capitalize',
+                    textAlign: 'left',
+                    color: 'rgb(145,151,157)',
+                    border: `1px solid #ccc`,
+                    borderRadius: '8px',
+                    marginRight: '2rem',
+                    backdropFilter: "blur(30px)",
+                    '&:hover': {
+                      backgroundColor: "",
+                      border: `1px solid #ccc`,
+                    }
+                  }}
                   disableElevation={true}
                   startIcon={
                     <SearchOutlinedIcon color={"primary"} />
@@ -118,45 +136,6 @@ const NavbarComponent = () => {
                 </Button>
               </Tooltip>
             </div>
-{/* 
-            <div className="self-center hidden md:block">
-              <Tooltip title="Keranjang">
-                <Button
-                  variant="outlined"
-                  onClick={() => setIsOpenDrawer(!isOpenDrawer)}
-                  size="small"
-                  className={classes.cartButton}
-                  disableElevation={true}
-                  startIcon={
-                    <ShoppingCartOutlinedIcon color={"primary"} />
-                  }
-                >
-                  0
-                </Button>
-              </Tooltip>
-            </div> */}
-{/* 
-            <div className="self-center hidden md:block">
-              <Tooltip title="Lihat kategori">
-                <Button
-                  variant="outlined"
-                  onClick={() => setIsOpenDrawer(!isOpenDrawer)}
-                  size="small"
-                  className={classes.cartButton}
-                  disableElevation={true}
-                  startIcon={
-                    <FeaturedPlayListIcon color={"primary"} />
-                  }
-                >
-                  Kategori
-                </Button>
-              </Tooltip>
-            </div> */}
-
-            {/* <div className="self-center md:px-4"> */}
-              {/* USER PROFILE */}
-            {/* </div> */}
-
           </div>
         </div>
       </AppBar>
