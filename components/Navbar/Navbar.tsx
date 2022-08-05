@@ -57,30 +57,7 @@ export const useStyles = makeStyles((theme) => ({
   }
 }))
 
-
-interface Props {
-  window?: () => Window;
-  children: React.ReactElement;
-}
-
-
-function ElevationScroll(props: Props) {
-  const { children, window } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-    target: window ? window() : undefined,
-  });
-
-  return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
-  });
-}
-
-
+ 
 const NavbarComponent = () => {
 
   const [isOpenDrawer, setIsOpenDrawer] = React.useState(false);
@@ -92,25 +69,23 @@ const NavbarComponent = () => {
     <Box sx={{ flexGrow: 1 }}>
 
       <AppBar
-        position="fixed"
-        color="transparent"
+        // position="fixed"
+        color="primary"
         elevation={0}
         sx={{
-          borderBottom: `0.8px solid rgb(224, 227, 231)`,
-          backgroundColor: "#fff",
           backdropFilter: "blur(30px)"
         }}
       >
         <div className="flex justify-center shadow-sm">
           <div className='flex justify-between md:flex md:flex-row md:w-1/2 md:justify-center'>
-            <img src="/assets/brand/logo_abaya.png" width={"180"} className="mr-8" />
+            <img src="/assets/brand/logo_abaya-white.png" width={"160"} className="mr-8" />
             <div className="self-center w-full">
               <Tooltip title="Cari produk">
                 <Button
                   variant="outlined"
                   size="small"
                   sx={{
-                    background: "#fff",
+                    background: "#fff !important",
                     minWidth: '100%',
                     fontSize: '0.8rem',
                     lineHeight: '1.8rem',

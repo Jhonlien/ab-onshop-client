@@ -51,12 +51,12 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
 const Menu: React.FC = () => {
   const router = useRouter()
   return (
-    <div className='md:flex justify-center bg-slate-50'>
+    <div className='md:flex justify-center'>
       <div className="md:w-1/2 bg-white">
-      <div className="flex overflow-x-auto space-x-2 justify-between px-12 mt-12" style={{marginTop : "30px"}}>
+      <div className="flex overflow-x-auto space-x-2 justify-between px-4 md:px-8">
         {
           PageRoute.PAGE_ROUTE.map((menu, index) => (         
-            <div className='flex-shrink-0 md:shrink overflow-hidden flex md:flex-row items-center' key={index}>
+            <div className='flex-shrink-0 md:shrink overflow-hidden flex md:flex-row items-center my-4 ' key={index}>
               <Link href={menu.href}>
                 <MenuButton
                   name={menu.name}
@@ -68,7 +68,7 @@ const Menu: React.FC = () => {
           ))
         }
       </div>
-      <hr className='mt-8'/>
+      <hr/>
       </div>
     </div>
   )

@@ -34,15 +34,15 @@ const Layout: React.FC<LayoutProps> = (
         variants={variants}
         transition={{ type: 'linear', restDelta: 0.5 }}
       >
-      <div className="flex justify-center bg-slate-50">
-        <div className="md:w-1/2 bg-white">
-          <div className='md:px-12 w-full content-center bg-white mt-4'>
+      <div className="flex justify-center bg-slate-50 ">
+        <div className="md:w-1/2 bg-white mb-12">
+          <div className='md:px-12 w-full bg-white mt-4 h-full'>
             {children}
-            <FixedBottomNavigation/>
           </div>
         </div>
       </div>
       </motion.main>
+      <FixedBottomNavigation/>
     </>
   )
 }

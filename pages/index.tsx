@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 
   return (
     <Layout title='Home'>
-      {/* <HeroCarousel /> */}
+      <HeroCarousel />
       {/* <HeroCarouselLoad /> */}
 
       <div className='flex mx-4 md:mx-0'>
@@ -39,7 +39,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className='flex mb-8'>
+      <div className='flex mb-8 mx-4 md:mx-0'>
         <div className='w-full'>
           <Button
             variant="outlined"
@@ -65,7 +65,7 @@ const Home: NextPage = () => {
       </div>
 
 
-      <div className='flex md:mx-0'>
+      <div className='flex mx-4 md:mx-0'>
         <div className='w-full'>
           <SectionTitle title='Kategori' />
         </div>
@@ -95,7 +95,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className='flex mb-8'>
+      <div className='flex mb-8 mx-4 md:mx-0'>
         <div className='w-full'>
           <Button
             variant="outlined"

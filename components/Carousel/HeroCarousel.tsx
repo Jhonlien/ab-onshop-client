@@ -16,9 +16,8 @@ const HeroCarousel = () => {
   return (
     <div className="flex justify-center">
       <Carousel
-        className="mx-4 w-full md:w-1/2 self-center"
+        className="w-full mx-4 md:mx-0 self-center"
         sx={{
-          marginY: 4,
           borderRadius: '20px'
         }}
         navButtonsAlwaysInvisible
